@@ -1,12 +1,12 @@
 import os
-# from app.db_config import create_tables
+from app.database import create_table
 
 from app import create_app
 
 app = create_app()
 
 if __name__ == '__main__':
-    # create_tables
+    create_table
     app.run()
 
 # import os

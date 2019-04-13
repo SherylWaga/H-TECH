@@ -4,7 +4,7 @@ from flask_jwt_extended import (JWTManager)
 from flask import Flask, jsonify, request, make_response
 # local imports
 from instance.config import app_config
-# from .db_config import create_tables, admin
+from .database import create_table, admin
 from .api.v2 import version_2 as v2
 
 
@@ -14,8 +14,8 @@ def create_app(config_name='development'):
     # app.config.from_object(app_config[config_name])
     app.config.from_pyfile('config.py')
     app.register_blueprint(v2)
-    # create_tables()
-    # admin()
+    create_table()
+    admin()
     app.config['JWT_SECRET_KEY'] = 'WAGS'
     jwt = JWTManager(app)
 
