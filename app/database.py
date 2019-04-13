@@ -1,6 +1,6 @@
 import os
 import psycopg2
-connection = psycopg2.connect(dbname='dab67m4dtjn66i', user='postgres', password='8fd8db2a94d104296e790e37ebb7bab43662457cdc4bf7b19bfa26dd972b7914', host='ec2-50-17-231-192.compute-1.amazonaws.com', port='5432')
+connection = psycopg2.connect(dbname='dab67m4dtjn66i', user='etfeuvuknkkukm', password='8fd8db2a94d104296e790e37ebb7bab43662457cdc4bf7b19bfa26dd972b7914', host='ec2-50-17-231-192.compute-1.amazonaws.com', port='5432')
 
 def init_db ():
 	conn = connection
