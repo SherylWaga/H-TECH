@@ -1,6 +1,6 @@
 import os
 import psycopg2
-connection = psycopg2.connect(dbname='htech', user='postgres', password='refuge', host='localhost')
+connection = psycopg2.connect(dbname='htech', user='postgres', password='refuge', host='localhost', port='5432')
 
 def init_db ():
 	conn = connection
