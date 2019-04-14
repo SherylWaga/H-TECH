@@ -21,28 +21,28 @@ def create_app(config_name='development'):
 
 
 
-    @app.errorhandler(403)
-    def forbidden(error):
-        return make_response(jsonify(
-            {"message": "forbidden"}), 403)
+    # @app.errorhandler(403)
+    # def forbidden(error):
+    #     return make_response(jsonify(
+    #         {"message": "forbidden"}), 403)
 
-    @app.errorhandler(500)
-    def internal_server_error(error):
-        return make_response(jsonify(
-            {"message": "server error"}), 500)
+    # @app.errorhandler(500)
+    # def internal_server_error(error):
+    #     return make_response(jsonify(
+    #         {"message": "server error"}), 500)
 
-    @app.errorhandler(404)
-    def page_not_found(error):
-        return make_response(jsonify(
-            {"message": "method not allowed"}), 404)
+    # @app.errorhandler(404)
+    # def page_not_found(error):
+    #     return make_response(jsonify(
+    #         {"message": "method not allowed"}), 404)
 
-    @app.errorhandler(500)
-    def internal_server_error(error):
-        return make_response(jsonify(
-            {"message": "server error"}), 500)
+    # @app.errorhandler(500)
+    # def internal_server_error(error):
+    #     return make_response(jsonify(
+    #         {"message": "server error"}), 500)
 
-    @app.errorhandler(405)
-    def method_not_allowed(error):
-        return make_response(jsonify(
-            {"message": "method not allowed"}), 405)
+    # @app.errorhandler(405)
+    # def method_not_allowed(error):
+    #     return make_response(jsonify(
+    #         {"message": "method not allowed"}), 405)
     return app
