@@ -31,29 +31,25 @@ class Users():
         return users
 
     def fetch_user(self):
+        dbconn = self.db
+        curr = dbconn.cursor()
+        curr.execute("""SELECT username FROM users""")
+        data = curr.fetchall()
+        resp = []
+
+        """Iterate over the index and values of items in 'data'"""
+        for i, items in enumerate(data):
+            username = items
+            datah = dict(
+                username=username
+            )
+            resp.append(datah)
         username = request.json.get('username')
-      
-        cur = self.db.cursor()
-      
-        cur.execute("SELECT * FROM users WHERE username='" + str(username) + "'")
-        data = cur.fetchone()
-        value = list(data)
-        if username == value[3]:
+        sname = str(resp)
+        if str(username) in sname:
             return True
-        return False
 
-
-
-    def validate_pass(self):
-       
-        cur = self.db.cursor()
-        password = request.json.get('password')
-        cur.execute("SELECT * FROM users WHERE password='" + str(password) + "'")
-        data = cur.fetchone()
-        value = list(data)
-        if password == value[6]:
-            return True
-        return False
+        
     
     
     

@@ -43,15 +43,9 @@ class CreateUsers(Resource):
 
 class Login (Resource):
         def post(self):
-            username = request.json.get('username').lower()
-            password = request.json.get('password').lower()
-            if Users().fetch_user():
-                return jsonify({'status_code': 404,
-                                'message': 'invalid username'})
-            if Users().validate_pass():
-                return jsonify({'status_code': 404,
-                                'message': 'invalid password.'})
-            
+            username = request.json.get('username')
+            password = request.json.get('password')
+                      
 
             token = create_access_token(identity=username)
             response = jsonify({'token': token,
