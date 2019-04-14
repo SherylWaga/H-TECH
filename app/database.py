@@ -30,14 +30,14 @@ def create_table():
 
 				"""CREATE TABLE IF NOT EXISTS pattient(
 			pattient_id SERIAL PRIMARY KEY UNIQUE NOT NULL,
-			un_id INT,
+			un_id BIGINT NOT NULL CHECK(un_id >= 0),		
 			first_name VARCHAR(50) NOT NULL,
 			last_name VARCHAR(50) NOT NULL,
 			email VARCHAR(50),
-			id_number INT,
-			phone_number INT,
-			age INT,
-			weight INT,
+			id_number BIGINT NOT NULL CHECK(id_number >= 0),
+			phone_number BIGINT NOT NULL CHECK(phone_number >= 0),
+			age BIGINT NOT NULL CHECK(age >= 0),
+			weight BIGINT NOT NULL CHECK(weight >= 0),
 			location VARCHAR(50) NOT NULL,
 			next_appointment VARCHAR(50),
 			created_on TIMESTAMP DEFAULT NOW()
